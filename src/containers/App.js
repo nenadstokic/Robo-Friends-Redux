@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
 import Scroll from '../components/Scroll';
-import ErrorBoundry from '../components/ErrorBoundry';
+//import ErrorBoundry from '../components/ErrorBoundry';
 import './App.css';
 import {setSearchField, requestRobots} from '../actions';
 
@@ -21,7 +21,6 @@ const mapDispatchToProps = (dispatch) => {
     onSearchChange: (event) => dispatch(setSearchField(event.target.value)),
     onRequestRobots: () => dispatch(requestRobots())
   }
-
 }
 
 class App extends Component {
@@ -46,9 +45,7 @@ class App extends Component {
         <h1 className='f1'>RoboFriends</h1>
         <SearchBox searchChange={onSearchChange}/>
         <Scroll>
-          <ErrorBoundry>
             <CardList robots={filteredRobots} />
-          </ErrorBoundry>
         </Scroll>
       </div>
     );
